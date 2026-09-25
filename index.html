@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IHEID Thesis Analysis</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2c5282;
+            --accent-color: #3182ce;
+            --bg-color: #f7fafc;
+            --card-bg: #ffffff;
+            --text-color: #2d3748;
+            --text-muted: #718096;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .stats-bar {
+            background: var(--secondary-color);
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        section h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        section p.description {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .card a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .card-icon {
+            background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            font-size: 3rem;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .card-description {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .card-meta {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer a {
+            color: #90cdf4;
+        }
+
+        .methodology {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .methodology h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .methodology ul {
+            margin-left: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        .methodology li {
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .stats-bar {
+                gap: 1.5rem;
+            }
+
+            .stat-value {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>IHEID Thesis Analysis</h1>
+        <p>Named Entity Recognition and Network Analysis of Academic Works (1928-2022)</p>
+    </header>
+
+    <div class="stats-bar">
+        <div class="stat">
+            <div class="stat-value">3,392</div>
+            <div class="stat-label">Documents</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">189.8M</div>
+            <div class="stat-label">Words Analyzed</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">704</div>
+            <div class="stat-label">PhD Theses</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">2,438</div>
+            <div class="stat-label">Master Theses</div>
+        </div>
+    </div>
+
+    <main>
+        <section>
+            <h2>Thesis Production Over Time</h2>
+            <p class="description">Temporal distribution of PhD and Master theses across IHEID and its predecessor institutions.</p>
+
+            <div class="card-grid">
+                <div class="card">
+                    <a href="thesis_timeline.html">
+                        <div class="card-icon">📊</div>
+                        <div class="card-content">
+                            <div class="card-title">Thesis Timeline</div>
+                            <div class="card-description">PhD vs Master thesis production from 1928 to 2022.</div>
+                            <div class="card-meta">704 PhD · 2,438 Master/Other</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a href="thesis_timeline_by_institution.html">
+                        <div class="card-icon">🏛️</div>
+                        <div class="card-content">
+                            <div class="card-title">By Institution</div>
+                            <div class="card-description">Thesis production by HEI, IUED, and IHEID over time.</div>
+                            <div class="card-meta">HEI · IUED · IHEID (post-2008)</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Named Entity Recognition: Geographic</h2>
+            <p class="description">Countries and continents mentioned in thesis documents, with smoothing and normalization options.</p>
+
+            <div class="card-grid">
+                <div class="card">
+                    <a href="continents_interactive.html">
+                        <div class="card-icon">🌍</div>
+                        <div class="card-content">
+                            <div class="card-title">Continents</div>
+                            <div class="card-description">Geographic focus of research by continent over time.</div>
+                            <div class="card-meta">Europe · Asia · Americas · Africa · Oceania</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a href="countries_interactive.html">
+                        <div class="card-icon">🗺️</div>
+                        <div class="card-content">
+                            <div class="card-title">Countries</div>
+                            <div class="card-description">Top 50 countries mentioned in academic works.</div>
+                            <div class="card-meta">Normalized EN/FR/DE variants</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Named Entity Recognition: Organizations</h2>
+            <p class="description">International organizations and NGOs extracted from thesis documents.</p>
+
+            <div class="card-grid">
+                <div class="card">
+                    <a href="ios_interactive.html">
+                        <div class="card-icon">🏢</div>
+                        <div class="card-content">
+                            <div class="card-title">International Organizations</div>
+                            <div class="card-description">UN, WTO, ILO, ICRC, NATO, World Bank, and more.</div>
+                            <div class="card-meta">Top 50 IOs · Multilingual normalization</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a href="ngos_interactive.html">
+                        <div class="card-icon">🤝</div>
+                        <div class="card-content">
+                            <div class="card-title">NGOs</div>
+                            <div class="card-description">MSF, Amnesty International, Oxfam, HRW, and others.</div>
+                            <div class="card-meta">Top 20 NGOs</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Named Entity Recognition: People</h2>
+            <p class="description">Historical figures and notable persons mentioned in thesis documents.</p>
+
+            <div class="card-grid">
+                <div class="card">
+                    <a href="persons_interactive.html">
+                        <div class="card-icon">👤</div>
+                        <div class="card-content">
+                            <div class="card-title">Historical Figures</div>
+                            <div class="card-description">Politicians, scholars, and notable figures referenced in theses.</div>
+                            <div class="card-meta">Top 50 persons · Filtered noise</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Network Analysis</h2>
+            <p class="description">PhD supervision and committee networks (GEXF format for Gephi).</p>
+
+            <div class="card-grid">
+                <div class="card">
+                    <a href="phd_director_network.gexf" download>
+                        <div class="card-icon">🔗</div>
+                        <div class="card-content">
+                            <div class="card-title">PhD-Director Network</div>
+                            <div class="card-description">Links between PhD candidates and their thesis directors.</div>
+                            <div class="card-meta">700 candidates · 210 directors · Download GEXF</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a href="phd_jury_network_filtered.gexf" download>
+                        <div class="card-icon">🕸️</div>
+                        <div class="card-content">
+                            <div class="card-title">PhD-Jury Network</div>
+                            <div class="card-description">Links between PhD candidates and committee members.</div>
+                            <div class="card-meta">700 candidates · 582 committee · Download GEXF</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Data & Methodology</h2>
+            <div class="methodology">
+                <h3>Pipeline Overview</h3>
+                <ul>
+                    <li><strong>Text Extraction:</strong> ALTO XML → Plain text</li>
+                    <li><strong>NER:</strong> spaCy (en_core_web_sm, fr_core_news_sm, de_core_news_sm)</li>
+                    <li><strong>Normalization:</strong> Multilingual entity merging (EN/FR/DE variants)</li>
+                    <li><strong>Visualization:</strong> Plotly interactive charts with smoothing and per-100k-words normalization</li>
+                </ul>
+
+                <h3 style="margin-top: 1.5rem;">Downloads</h3>
+                <ul>
+                    <li><a href="consolidated_theses.csv" download>consolidated_theses.csv</a> - All thesis metadata (PhD + Master)</li>
+                    <li><a href="PIPELINE_DOCUMENTATION.md" download>PIPELINE_DOCUMENTATION.md</a> - Full methodology documentation</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>IHEID Thesis Analysis Project · Data from 1928-2022</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8;">
+            Generated with spaCy NER · Visualized with Plotly · Networks with NetworkX
+        </p>
+    </footer>
+</body>
+</html>
