@@ -25,33 +25,34 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
-            line-height: 1.6;
+            line-height: 1.5;
+            font-size: 14px;
         }
 
         header {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            padding: 3rem 2rem;
+            padding: 1.5rem 2rem;
             text-align: center;
         }
 
         header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            margin-bottom: 0.25rem;
         }
 
         header p {
-            font-size: 1.2rem;
+            font-size: 1rem;
             opacity: 0.9;
         }
 
         .stats-bar {
             background: var(--secondary-color);
             color: white;
-            padding: 1rem 2rem;
+            padding: 0.6rem 2rem;
             display: flex;
             justify-content: center;
-            gap: 3rem;
+            gap: 2.5rem;
             flex-wrap: wrap;
         }
 
@@ -60,101 +61,164 @@
         }
 
         .stat-value {
-            font-size: 1.8rem;
+            font-size: 1.3rem;
             font-weight: bold;
         }
 
         .stat-label {
-            font-size: 0.9rem;
+            font-size: 0.75rem;
             opacity: 0.8;
         }
 
         main {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 1.5rem;
         }
 
         section {
-            margin-bottom: 3rem;
+            margin-bottom: 1.5rem;
         }
 
         section h2 {
             color: var(--primary-color);
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid var(--accent-color);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 2px solid var(--accent-color);
         }
 
         section p.description {
             color: var(--text-muted);
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.85rem;
         }
 
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .card-grid-wide {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         }
 
         .card {
             background: var(--card-bg);
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
             overflow: hidden;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.15s, box-shadow 0.15s;
+            border: 1px solid #e2e8f0;
         }
 
         .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
         }
 
         .card a {
             text-decoration: none;
             color: inherit;
-            display: block;
+            display: flex;
+            align-items: stretch;
         }
 
         .card-icon {
             background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
             color: white;
-            padding: 2rem;
-            text-align: center;
-            font-size: 3rem;
+            padding: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            min-width: 50px;
         }
 
         .card-content {
-            padding: 1.5rem;
+            padding: 0.6rem 0.8rem;
+            flex: 1;
         }
 
         .card-title {
-            font-size: 1.3rem;
+            font-size: 0.95rem;
             font-weight: 600;
-            margin-bottom: 0.5rem;
             color: var(--primary-color);
+            margin-bottom: 0.15rem;
         }
 
         .card-description {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 0.8rem;
+            line-height: 1.3;
         }
 
         .card-meta {
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid #e2e8f0;
-            font-size: 0.85rem;
+            margin-top: 0.4rem;
+            font-size: 0.75rem;
             color: var(--text-muted);
+        }
+
+        .card-meta a {
+            display: inline;
+            color: var(--accent-color);
+        }
+
+        .card-meta a:hover {
+            text-decoration: underline;
+        }
+
+        /* Compact inline link cards */
+        .link-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .link-card {
+            background: var(--card-bg);
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 0.5rem 0.75rem;
+            font-size: 0.85rem;
+            transition: all 0.15s;
+        }
+
+        .link-card:hover {
+            border-color: var(--accent-color);
+            background: #f0f7ff;
+        }
+
+        .link-card a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .link-card .count {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            margin-left: 0.3rem;
+        }
+
+        .link-card .links {
+            font-size: 0.7rem;
+            margin-top: 0.2rem;
+        }
+
+        .link-card .links a {
+            color: var(--accent-color);
+            font-weight: normal;
         }
 
         footer {
             background: var(--primary-color);
             color: white;
             text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
+            padding: 1rem;
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
         }
 
         footer a {
@@ -163,44 +227,55 @@
 
         .methodology {
             background: var(--card-bg);
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e2e8f0;
+            font-size: 0.85rem;
         }
 
         .methodology h3 {
             color: var(--primary-color);
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
         }
 
         .methodology ul {
-            margin-left: 1.5rem;
+            margin-left: 1.2rem;
             color: var(--text-muted);
         }
 
         .methodology li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
         }
 
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8rem;
+            .two-col {
+                grid-template-columns: 1fr;
             }
-
             .stats-bar {
-                gap: 1.5rem;
-            }
-
-            .stat-value {
-                font-size: 1.4rem;
+                gap: 1rem;
             }
         }
+
+        /* Color variants for icons */
+        .icon-red { background: linear-gradient(135deg, #e74c3c, #c0392b) !important; }
+        .icon-blue { background: linear-gradient(135deg, #3498db, #2980b9) !important; }
+        .icon-green { background: linear-gradient(135deg, #2ecc71, #27ae60) !important; }
+        .icon-purple { background: linear-gradient(135deg, #9b59b6, #8e44ad) !important; }
+        .icon-orange { background: linear-gradient(135deg, #f39c12, #e67e22) !important; }
     </style>
 </head>
 <body>
     <header>
         <h1>IHEID Thesis Analysis</h1>
-        <p>Named Entity Recognition and Network Analysis of Academic Works (1928-2022)</p>
+        <p>Named Entity Recognition in Academic Works (1928-2022)</p>
     </header>
 
     <div class="stats-bar">
@@ -210,316 +285,219 @@
         </div>
         <div class="stat">
             <div class="stat-value">189.8M</div>
-            <div class="stat-label">Words Analyzed</div>
+            <div class="stat-label">Words</div>
         </div>
         <div class="stat">
             <div class="stat-value">704</div>
-            <div class="stat-label">PhD Theses</div>
+            <div class="stat-label">PhD</div>
         </div>
         <div class="stat">
             <div class="stat-value">2,438</div>
-            <div class="stat-label">Master Theses</div>
+            <div class="stat-label">Master</div>
         </div>
     </div>
 
     <main>
-        <section>
-            <h2>Thesis Production Over Time</h2>
-            <p class="description">Temporal distribution of PhD and Master theses across IHEID and its predecessor institutions.</p>
-
-            <div class="card-grid">
-                <div class="card">
-                    <a href="thesis_timeline.html">
-                        <div class="card-icon">📊</div>
-                        <div class="card-content">
-                            <div class="card-title">Thesis Timeline</div>
-                            <div class="card-description">PhD vs Master thesis production from 1928 to 2022.</div>
-                            <div class="card-meta">704 PhD · 2,438 Master/Other</div>
-                        </div>
-                    </a>
+        <div class="two-col">
+            <section>
+                <h2>Thesis Production</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <a href="thesis_timeline.html">
+                            <div class="card-icon">📊</div>
+                            <div class="card-content">
+                                <div class="card-title">Timeline</div>
+                                <div class="card-description">PhD vs Master (1928-2022)</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="thesis_timeline_by_institution.html">
+                            <div class="card-icon">🏛️</div>
+                            <div class="card-content">
+                                <div class="card-title">By Institution</div>
+                                <div class="card-description">HEI · IUED · IHEID</div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
+            </section>
 
-                <div class="card">
-                    <a href="thesis_timeline_by_institution.html">
-                        <div class="card-icon">🏛️</div>
-                        <div class="card-content">
-                            <div class="card-title">By Institution</div>
-                            <div class="card-description">Thesis production by HEI, IUED, and IHEID over time.</div>
-                            <div class="card-meta">HEI · IUED · IHEID (post-2008)</div>
-                        </div>
-                    </a>
+            <section>
+                <h2>NER: All Documents</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <a href="continents_interactive.html">
+                            <div class="card-icon">🌍</div>
+                            <div class="card-content">
+                                <div class="card-title">Continents</div>
+                                <div class="card-description">Geographic focus over time</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="countries_interactive.html">
+                            <div class="card-icon">🗺️</div>
+                            <div class="card-content">
+                                <div class="card-title">Countries</div>
+                                <div class="card-description">Top 50 countries</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="ios_interactive.html">
+                            <div class="card-icon">🏢</div>
+                            <div class="card-content">
+                                <div class="card-title">IOs</div>
+                                <div class="card-description">UN, WTO, ILO, etc.</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="ngos_interactive.html">
+                            <div class="card-icon">🤝</div>
+                            <div class="card-content">
+                                <div class="card-title">NGOs</div>
+                                <div class="card-description">MSF, Amnesty, Oxfam</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="persons_interactive.html">
+                            <div class="card-icon">👤</div>
+                            <div class="card-content">
+                                <div class="card-title">Persons</div>
+                                <div class="card-description">Historical figures</div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Named Entity Recognition: Geographic (All Documents)</h2>
-            <p class="description">Countries and continents mentioned in thesis documents, with smoothing and normalization options.</p>
-
-            <div class="card-grid">
-                <div class="card">
-                    <a href="continents_interactive.html">
-                        <div class="card-icon">🌍</div>
-                        <div class="card-content">
-                            <div class="card-title">Continents</div>
-                            <div class="card-description">Geographic focus of research by continent over time.</div>
-                            <div class="card-meta">Europe · Asia · Americas · Africa · Oceania</div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="card">
-                    <a href="countries_interactive.html">
-                        <div class="card-icon">🗺️</div>
-                        <div class="card-content">
-                            <div class="card-title">Countries</div>
-                            <div class="card-description">Top 50 countries mentioned in academic works.</div>
-                            <div class="card-meta">Normalized EN/FR/DE variants</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
+            </section>
+        </div>
 
         <section>
             <h2>NER by Thesis Type</h2>
-            <p class="description">Named entity time series separated by PhD and Master theses.</p>
-
-            <div class="card-grid">
-                <div class="card">
-                    <a href="ner_by_subcategory/all_phd/countries.html">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">🎓</div>
-                        <div class="card-content">
-                            <div class="card-title">PhD Theses</div>
-                            <div class="card-description">NER analysis across all 704 PhD dissertations.</div>
-                            <div class="card-meta">
-                                <a href="ner_by_subcategory/all_phd/countries.html">Countries</a> ·
-                                <a href="ner_by_subcategory/all_phd/continents.html">Continents</a> ·
-                                <a href="ner_by_subcategory/all_phd/ios.html">IOs</a> ·
-                                <a href="ner_by_subcategory/all_phd/ngos.html">NGOs</a> ·
-                                <a href="ner_by_subcategory/all_phd/persons.html">Persons</a>
-                            </div>
-                        </div>
-                    </a>
+            <div class="link-grid">
+                <div class="link-card">
+                    <a href="ner_by_subcategory/all_phd/countries.html">🎓 PhD Theses</a>
+                    <span class="count">(704)</span>
+                    <div class="links">
+                        <a href="ner_by_subcategory/all_phd/countries.html">Countries</a> ·
+                        <a href="ner_by_subcategory/all_phd/continents.html">Continents</a> ·
+                        <a href="ner_by_subcategory/all_phd/ios.html">IOs</a> ·
+                        <a href="ner_by_subcategory/all_phd/ngos.html">NGOs</a> ·
+                        <a href="ner_by_subcategory/all_phd/persons.html">Persons</a>
+                    </div>
                 </div>
-
-                <div class="card">
-                    <a href="ner_by_subcategory/all_master/countries.html">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #3498db, #2980b9);">📝</div>
-                        <div class="card-content">
-                            <div class="card-title">Master Theses</div>
-                            <div class="card-description">NER analysis across all 2,317 Master theses.</div>
-                            <div class="card-meta">
-                                <a href="ner_by_subcategory/all_master/countries.html">Countries</a> ·
-                                <a href="ner_by_subcategory/all_master/continents.html">Continents</a> ·
-                                <a href="ner_by_subcategory/all_master/ios.html">IOs</a> ·
-                                <a href="ner_by_subcategory/all_master/ngos.html">NGOs</a> ·
-                                <a href="ner_by_subcategory/all_master/persons.html">Persons</a>
-                            </div>
-                        </div>
-                    </a>
+                <div class="link-card">
+                    <a href="ner_by_subcategory/all_master/countries.html">📝 Master Theses</a>
+                    <span class="count">(2,317)</span>
+                    <div class="links">
+                        <a href="ner_by_subcategory/all_master/countries.html">Countries</a> ·
+                        <a href="ner_by_subcategory/all_master/continents.html">Continents</a> ·
+                        <a href="ner_by_subcategory/all_master/ios.html">IOs</a> ·
+                        <a href="ner_by_subcategory/all_master/ngos.html">NGOs</a> ·
+                        <a href="ner_by_subcategory/all_master/persons.html">Persons</a>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section>
             <h2>NER by Institution</h2>
-            <p class="description">Named entity time series separated by institution of origin.</p>
-
-            <div class="card-grid">
-                <div class="card">
-                    <a href="ner_by_subcategory/all_hei/countries.html">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #2ecc71, #27ae60);">🏛️</div>
-                        <div class="card-content">
-                            <div class="card-title">HEI</div>
-                            <div class="card-description">Graduate Institute of International Studies (historical).</div>
-                            <div class="card-meta">
-                                <a href="ner_by_subcategory/all_hei/countries.html">Countries</a> ·
-                                <a href="ner_by_subcategory/all_hei/continents.html">Continents</a> ·
-                                <a href="ner_by_subcategory/all_hei/ios.html">IOs</a> ·
-                                <a href="ner_by_subcategory/all_hei/ngos.html">NGOs</a> ·
-                                <a href="ner_by_subcategory/all_hei/persons.html">Persons</a>
-                            </div>
-                        </div>
-                    </a>
+            <div class="link-grid">
+                <div class="link-card">
+                    <a href="ner_by_subcategory/all_hei/countries.html">🏛️ HEI</a>
+                    <span class="count">(2,815)</span>
+                    <div class="links">
+                        <a href="ner_by_subcategory/all_hei/countries.html">Countries</a> ·
+                        <a href="ner_by_subcategory/all_hei/continents.html">Continents</a> ·
+                        <a href="ner_by_subcategory/all_hei/ios.html">IOs</a> ·
+                        <a href="ner_by_subcategory/all_hei/ngos.html">NGOs</a> ·
+                        <a href="ner_by_subcategory/all_hei/persons.html">Persons</a>
+                    </div>
                 </div>
-
-                <div class="card">
-                    <a href="ner_by_subcategory/all_iued/countries.html">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">🌐</div>
-                        <div class="card-content">
-                            <div class="card-title">IUED</div>
-                            <div class="card-description">Institut universitaire d'études du développement.</div>
-                            <div class="card-meta">
-                                <a href="ner_by_subcategory/all_iued/countries.html">Countries</a> ·
-                                <a href="ner_by_subcategory/all_iued/continents.html">Continents</a> ·
-                                <a href="ner_by_subcategory/all_iued/ios.html">IOs</a> ·
-                                <a href="ner_by_subcategory/all_iued/ngos.html">NGOs</a> ·
-                                <a href="ner_by_subcategory/all_iued/persons.html">Persons</a>
-                            </div>
-                        </div>
-                    </a>
+                <div class="link-card">
+                    <a href="ner_by_subcategory/all_iued/countries.html">🌐 IUED</a>
+                    <span class="count">(44)</span>
+                    <div class="links">
+                        <a href="ner_by_subcategory/all_iued/countries.html">Countries</a> ·
+                        <a href="ner_by_subcategory/all_iued/continents.html">Continents</a> ·
+                        <a href="ner_by_subcategory/all_iued/ios.html">IOs</a> ·
+                        <a href="ner_by_subcategory/all_iued/ngos.html">NGOs</a> ·
+                        <a href="ner_by_subcategory/all_iued/persons.html">Persons</a>
+                    </div>
                 </div>
-
-                <div class="card">
-                    <a href="ner_by_subcategory/all_iheid/countries.html">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #f39c12, #e67e22);">🎯</div>
-                        <div class="card-content">
-                            <div class="card-title">IHEID</div>
-                            <div class="card-description">Graduate Institute (post-2008 merger).</div>
-                            <div class="card-meta">
-                                <a href="ner_by_subcategory/all_iheid/countries.html">Countries</a> ·
-                                <a href="ner_by_subcategory/all_iheid/continents.html">Continents</a> ·
-                                <a href="ner_by_subcategory/all_iheid/ios.html">IOs</a> ·
-                                <a href="ner_by_subcategory/all_iheid/ngos.html">NGOs</a> ·
-                                <a href="ner_by_subcategory/all_iheid/persons.html">Persons</a>
-                            </div>
-                        </div>
-                    </a>
+                <div class="link-card">
+                    <a href="ner_by_subcategory/all_iheid/countries.html">🎯 IHEID</a>
+                    <span class="count">(162)</span>
+                    <div class="links">
+                        <a href="ner_by_subcategory/all_iheid/countries.html">Countries</a> ·
+                        <a href="ner_by_subcategory/all_iheid/continents.html">Continents</a> ·
+                        <a href="ner_by_subcategory/all_iheid/ios.html">IOs</a> ·
+                        <a href="ner_by_subcategory/all_iheid/ngos.html">NGOs</a> ·
+                        <a href="ner_by_subcategory/all_iheid/persons.html">Persons</a>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section>
             <h2>NER by Thesis Type + Institution</h2>
-            <p class="description">Detailed breakdown by both thesis type and institution of origin.</p>
-
-            <div class="card-grid">
-                <div class="card">
-                    <a href="ner_by_subcategory/phd_hei/countries.html">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #e74c3c, #2ecc71);">🎓</div>
-                        <div class="card-content">
-                            <div class="card-title">PhD at HEI</div>
-                            <div class="card-description">527 PhD dissertations from HEI.</div>
-                            <div class="card-meta">
-                                <a href="ner_by_subcategory/phd_hei/countries.html">Countries</a> ·
-                                <a href="ner_by_subcategory/phd_hei/ios.html">IOs</a> ·
-                                <a href="ner_by_subcategory/phd_hei/persons.html">Persons</a>
-                            </div>
-                        </div>
-                    </a>
+            <div class="link-grid">
+                <div class="link-card">
+                    <a href="ner_by_subcategory/phd_hei/countries.html">🎓 PhD @ HEI</a>
+                    <span class="count">(527)</span>
+                    <div class="links">
+                        <a href="ner_by_subcategory/phd_hei/countries.html">Countries</a> ·
+                        <a href="ner_by_subcategory/phd_hei/ios.html">IOs</a> ·
+                        <a href="ner_by_subcategory/phd_hei/persons.html">Persons</a>
+                    </div>
                 </div>
-
-                <div class="card">
-                    <a href="ner_by_subcategory/phd_iheid/countries.html">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #e74c3c, #f39c12);">🎓</div>
-                        <div class="card-content">
-                            <div class="card-title">PhD at IHEID</div>
-                            <div class="card-description">154 PhD dissertations from IHEID.</div>
-                            <div class="card-meta">
-                                <a href="ner_by_subcategory/phd_iheid/countries.html">Countries</a> ·
-                                <a href="ner_by_subcategory/phd_iheid/ios.html">IOs</a> ·
-                                <a href="ner_by_subcategory/phd_iheid/persons.html">Persons</a>
-                            </div>
-                        </div>
-                    </a>
+                <div class="link-card">
+                    <a href="ner_by_subcategory/phd_iheid/countries.html">🎓 PhD @ IHEID</a>
+                    <span class="count">(154)</span>
+                    <div class="links">
+                        <a href="ner_by_subcategory/phd_iheid/countries.html">Countries</a> ·
+                        <a href="ner_by_subcategory/phd_iheid/ios.html">IOs</a> ·
+                        <a href="ner_by_subcategory/phd_iheid/persons.html">Persons</a>
+                    </div>
                 </div>
-
-                <div class="card">
-                    <a href="ner_by_subcategory/phd_iued/countries.html">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #e74c3c, #9b59b6);">🎓</div>
-                        <div class="card-content">
-                            <div class="card-title">PhD at IUED</div>
-                            <div class="card-description">23 PhD dissertations from IUED.</div>
-                            <div class="card-meta">
-                                <a href="ner_by_subcategory/phd_iued/countries.html">Countries</a> ·
-                                <a href="ner_by_subcategory/phd_iued/ios.html">IOs</a> ·
-                                <a href="ner_by_subcategory/phd_iued/persons.html">Persons</a>
-                            </div>
-                        </div>
-                    </a>
+                <div class="link-card">
+                    <a href="ner_by_subcategory/phd_iued/countries.html">🎓 PhD @ IUED</a>
+                    <span class="count">(23)</span>
+                    <div class="links">
+                        <a href="ner_by_subcategory/phd_iued/countries.html">Countries</a> ·
+                        <a href="ner_by_subcategory/phd_iued/ios.html">IOs</a> ·
+                        <a href="ner_by_subcategory/phd_iued/persons.html">Persons</a>
+                    </div>
                 </div>
-
-                <div class="card">
-                    <a href="ner_by_subcategory/master_hei/countries.html">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #3498db, #2ecc71);">📝</div>
-                        <div class="card-content">
-                            <div class="card-title">Master at HEI</div>
-                            <div class="card-description">2,288 Master theses from HEI.</div>
-                            <div class="card-meta">
-                                <a href="ner_by_subcategory/master_hei/countries.html">Countries</a> ·
-                                <a href="ner_by_subcategory/master_hei/ios.html">IOs</a> ·
-                                <a href="ner_by_subcategory/master_hei/persons.html">Persons</a>
-                            </div>
-                        </div>
-                    </a>
+                <div class="link-card">
+                    <a href="ner_by_subcategory/master_hei/countries.html">📝 Master @ HEI</a>
+                    <span class="count">(2,288)</span>
+                    <div class="links">
+                        <a href="ner_by_subcategory/master_hei/countries.html">Countries</a> ·
+                        <a href="ner_by_subcategory/master_hei/ios.html">IOs</a> ·
+                        <a href="ner_by_subcategory/master_hei/persons.html">Persons</a>
+                    </div>
                 </div>
-
-                <div class="card">
-                    <a href="ner_by_subcategory/master_iheid/countries.html">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #3498db, #f39c12);">📝</div>
-                        <div class="card-content">
-                            <div class="card-title">Master at IHEID</div>
-                            <div class="card-description">8 Master theses from IHEID.</div>
-                            <div class="card-meta">
-                                <a href="ner_by_subcategory/master_iheid/countries.html">Countries</a> ·
-                                <a href="ner_by_subcategory/master_iheid/ios.html">IOs</a> ·
-                                <a href="ner_by_subcategory/master_iheid/persons.html">Persons</a>
-                            </div>
-                        </div>
-                    </a>
+                <div class="link-card">
+                    <a href="ner_by_subcategory/master_iheid/countries.html">📝 Master @ IHEID</a>
+                    <span class="count">(8)</span>
+                    <div class="links">
+                        <a href="ner_by_subcategory/master_iheid/countries.html">Countries</a> ·
+                        <a href="ner_by_subcategory/master_iheid/ios.html">IOs</a> ·
+                        <a href="ner_by_subcategory/master_iheid/persons.html">Persons</a>
+                    </div>
                 </div>
-
-                <div class="card">
-                    <a href="ner_by_subcategory/master_iued/countries.html">
-                        <div class="card-icon" style="background: linear-gradient(135deg, #3498db, #9b59b6);">📝</div>
-                        <div class="card-content">
-                            <div class="card-title">Master at IUED</div>
-                            <div class="card-description">21 Master theses from IUED.</div>
-                            <div class="card-meta">
-                                <a href="ner_by_subcategory/master_iued/countries.html">Countries</a> ·
-                                <a href="ner_by_subcategory/master_iued/ios.html">IOs</a> ·
-                                <a href="ner_by_subcategory/master_iued/persons.html">Persons</a>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Named Entity Recognition: Organizations</h2>
-            <p class="description">International organizations and NGOs extracted from thesis documents.</p>
-
-            <div class="card-grid">
-                <div class="card">
-                    <a href="ios_interactive.html">
-                        <div class="card-icon">🏢</div>
-                        <div class="card-content">
-                            <div class="card-title">International Organizations</div>
-                            <div class="card-description">UN, WTO, ILO, ICRC, NATO, World Bank, and more.</div>
-                            <div class="card-meta">Top 50 IOs · Multilingual normalization</div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="card">
-                    <a href="ngos_interactive.html">
-                        <div class="card-icon">🤝</div>
-                        <div class="card-content">
-                            <div class="card-title">NGOs</div>
-                            <div class="card-description">MSF, Amnesty International, Oxfam, HRW, and others.</div>
-                            <div class="card-meta">Top 20 NGOs</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Named Entity Recognition: People</h2>
-            <p class="description">Historical figures and notable persons mentioned in thesis documents.</p>
-
-            <div class="card-grid">
-                <div class="card">
-                    <a href="persons_interactive.html">
-                        <div class="card-icon">👤</div>
-                        <div class="card-content">
-                            <div class="card-title">Historical Figures</div>
-                            <div class="card-description">Politicians, scholars, and notable figures referenced in theses.</div>
-                            <div class="card-meta">Top 50 persons · Filtered noise</div>
-                        </div>
-                    </a>
+                <div class="link-card">
+                    <a href="ner_by_subcategory/master_iued/countries.html">📝 Master @ IUED</a>
+                    <span class="count">(21)</span>
+                    <div class="links">
+                        <a href="ner_by_subcategory/master_iued/countries.html">Countries</a> ·
+                        <a href="ner_by_subcategory/master_iued/ios.html">IOs</a> ·
+                        <a href="ner_by_subcategory/master_iued/persons.html">Persons</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -527,30 +505,19 @@
         <section>
             <h2>Methodology</h2>
             <div class="methodology">
-                <h3>Pipeline Overview</h3>
                 <ul>
-                    <li><strong>Text Extraction:</strong> ALTO XML → Plain text</li>
+                    <li><strong>Text Extraction:</strong> ALTO XML to plain text</li>
                     <li><strong>NER:</strong> spaCy (en_core_web_sm, fr_core_news_sm, de_core_news_sm)</li>
                     <li><strong>Normalization:</strong> Multilingual entity merging (EN/FR/DE variants)</li>
-                    <li><strong>Visualization:</strong> Plotly interactive charts with smoothing and per-100k-words normalization</li>
+                    <li><strong>Visualization:</strong> Plotly with smoothing and per-100k-words normalization</li>
                 </ul>
-
-                <h3 style="margin-top: 1.5rem;">Documentation</h3>
-                <ul>
-                    <li><a href="PIPELINE_DOCUMENTATION.md">PIPELINE_DOCUMENTATION.md</a> - Full methodology documentation</li>
-                </ul>
-
-                <h3 style="margin-top: 1.5rem;">Network Analysis</h3>
-                <p style="color: var(--text-muted); margin-top: 0.5rem;">PhD-Director and PhD-Jury networks available as GEXF files (contact for access).</p>
+                <p style="margin-top: 0.75rem;"><a href="PIPELINE_DOCUMENTATION.md">Full documentation</a></p>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>IHEID Thesis Analysis Project · Data from 1928-2022</p>
-        <p style="margin-top: 0.5rem; opacity: 0.8;">
-            Generated with spaCy NER · Visualized with Plotly · Networks with NetworkX
-        </p>
+        <p>IHEID Thesis Analysis · 1928-2022 · Generated with spaCy NER · Visualized with Plotly</p>
     </footer>
 </body>
 </html>
