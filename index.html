@@ -15,14 +15,10 @@
             --text-muted: #718096;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.5;
@@ -32,46 +28,33 @@
         header {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            padding: 1.5rem 2rem;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 1.8rem;
-            margin-bottom: 0.25rem;
-        }
-
-        header p {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-
-        .stats-bar {
-            background: var(--secondary-color);
-            color: white;
-            padding: 0.6rem 2rem;
+            padding: 1.2rem 2rem;
             display: flex;
-            justify-content: center;
-            gap: 2.5rem;
+            justify-content: space-between;
+            align-items: center;
             flex-wrap: wrap;
+            gap: 1rem;
         }
 
-        .stat {
-            text-align: center;
+        header h1 { font-size: 1.5rem; }
+        header p { font-size: 0.9rem; opacity: 0.9; }
+
+        .stats {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.85rem;
         }
 
-        .stat-value {
-            font-size: 1.3rem;
-            font-weight: bold;
+        .stats span {
+            background: rgba(255,255,255,0.15);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
         }
 
-        .stat-label {
-            font-size: 0.75rem;
-            opacity: 0.8;
-        }
+        .stats strong { font-size: 1.1rem; }
 
         main {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 1.5rem;
         }
@@ -80,444 +63,333 @@
             margin-bottom: 1.5rem;
         }
 
-        section h2 {
+        h2 {
             color: var(--primary-color);
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
             padding-bottom: 0.3rem;
             border-bottom: 2px solid var(--accent-color);
         }
 
-        section p.description {
-            color: var(--text-muted);
-            margin-bottom: 0.75rem;
-            font-size: 0.85rem;
-        }
-
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 0.75rem;
-        }
-
-        .card-grid-wide {
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        }
-
-        .card {
-            background: var(--card-bg);
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-            overflow: hidden;
-            transition: transform 0.15s, box-shadow 0.15s;
-            border: 1px solid #e2e8f0;
-        }
-
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
-        }
-
-        .card a {
-            text-decoration: none;
-            color: inherit;
+        /* Compact horizontal cards */
+        .quick-links {
             display: flex;
-            align-items: stretch;
-        }
-
-        .card-icon {
-            background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
-            color: white;
-            padding: 0.75rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-            min-width: 50px;
-        }
-
-        .card-content {
-            padding: 0.6rem 0.8rem;
-            flex: 1;
-        }
-
-        .card-title {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 0.15rem;
-        }
-
-        .card-description {
-            color: var(--text-muted);
-            font-size: 0.8rem;
-            line-height: 1.3;
-        }
-
-        .card-meta {
-            margin-top: 0.4rem;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-
-        .card-meta a {
-            display: inline;
-            color: var(--accent-color);
-        }
-
-        .card-meta a:hover {
-            text-decoration: underline;
-        }
-
-        /* Compact inline link cards */
-        .link-grid {
-            display: flex;
-            flex-wrap: wrap;
             gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
         }
 
-        .link-card {
+        .quick-links a {
             background: var(--card-bg);
             border: 1px solid #e2e8f0;
             border-radius: 6px;
             padding: 0.5rem 0.75rem;
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 500;
             font-size: 0.85rem;
             transition: all 0.15s;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
         }
 
-        .link-card:hover {
+        .quick-links a:hover {
             border-color: var(--accent-color);
             background: #f0f7ff;
         }
 
-        .link-card a {
-            text-decoration: none;
-            color: var(--primary-color);
-            font-weight: 500;
-        }
-
-        .link-card .count {
+        .quick-links .sub {
             color: var(--text-muted);
-            font-size: 0.75rem;
-            margin-left: 0.3rem;
-        }
-
-        .link-card .links {
-            font-size: 0.7rem;
-            margin-top: 0.2rem;
-        }
-
-        .link-card .links a {
-            color: var(--accent-color);
             font-weight: normal;
+            font-size: 0.75rem;
         }
 
-        footer {
-            background: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 1.5rem;
+        /* Matrix table */
+        .matrix {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
             font-size: 0.85rem;
         }
 
-        footer a {
-            color: #90cdf4;
+        .matrix th, .matrix td {
+            padding: 0.6rem 0.5rem;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
         }
+
+        .matrix th {
+            background: var(--primary-color);
+            color: white;
+            font-weight: 500;
+            font-size: 0.8rem;
+        }
+
+        .matrix th:first-child {
+            text-align: left;
+            padding-left: 1rem;
+        }
+
+        .matrix td:first-child {
+            text-align: left;
+            padding-left: 1rem;
+            font-weight: 500;
+            color: var(--primary-color);
+            background: #f8fafc;
+        }
+
+        .matrix tr:last-child td { border-bottom: none; }
+
+        .matrix tr:hover td { background: #f0f7ff; }
+        .matrix tr:hover td:first-child { background: #e8f4ff; }
+
+        .matrix a {
+            color: var(--accent-color);
+            text-decoration: none;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            transition: all 0.1s;
+        }
+
+        .matrix a:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        /* Column groups */
+        .matrix .sep {
+            border-left: 2px solid #cbd5e0;
+        }
+
+        .matrix .col-all { background: #f0fdf4; }
+        .matrix .col-type { background: #fef3c7; }
+        .matrix .col-inst { background: #ede9fe; }
+
+        .matrix th.col-all { background: #166534; }
+        .matrix th.col-type { background: #b45309; }
+        .matrix th.col-inst { background: #6d28d9; }
+
+        /* Subheader row */
+        .matrix .subheader td {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            padding: 0.3rem 0.5rem;
+            background: #f8fafc;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .legend {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .legend span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .legend .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+        }
+
+        .dot-all { background: #166534; }
+        .dot-type { background: #b45309; }
+        .dot-inst { background: #6d28d9; }
 
         .methodology {
             background: var(--card-bg);
             border-radius: 8px;
-            padding: 1rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+            padding: 0.75rem 1rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
             border: 1px solid #e2e8f0;
-            font-size: 0.85rem;
         }
 
-        .methodology h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-            font-size: 0.95rem;
-        }
+        .methodology a { color: var(--accent-color); }
 
-        .methodology ul {
-            margin-left: 1.2rem;
+        footer {
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.8rem;
             color: var(--text-muted);
         }
 
-        .methodology li {
-            margin-bottom: 0.25rem;
-        }
-
-        .two-col {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-
         @media (max-width: 768px) {
-            .two-col {
-                grid-template-columns: 1fr;
-            }
-            .stats-bar {
-                gap: 1rem;
-            }
+            header { flex-direction: column; text-align: center; }
+            .matrix { font-size: 0.75rem; }
+            .matrix th, .matrix td { padding: 0.4rem 0.3rem; }
         }
-
-        /* Color variants for icons */
-        .icon-red { background: linear-gradient(135deg, #e74c3c, #c0392b) !important; }
-        .icon-blue { background: linear-gradient(135deg, #3498db, #2980b9) !important; }
-        .icon-green { background: linear-gradient(135deg, #2ecc71, #27ae60) !important; }
-        .icon-purple { background: linear-gradient(135deg, #9b59b6, #8e44ad) !important; }
-        .icon-orange { background: linear-gradient(135deg, #f39c12, #e67e22) !important; }
     </style>
 </head>
 <body>
     <header>
-        <h1>IHEID Thesis Analysis</h1>
-        <p>Named Entity Recognition in Academic Works (1928-2022)</p>
+        <div>
+            <h1>IHEID Thesis Analysis</h1>
+            <p>Named Entity Recognition (1928-2022)</p>
+        </div>
+        <div class="stats">
+            <span><strong>3,392</strong> docs</span>
+            <span><strong>189.8M</strong> words</span>
+            <span><strong>704</strong> PhD</span>
+            <span><strong>2,317</strong> Master</span>
+        </div>
     </header>
 
-    <div class="stats-bar">
-        <div class="stat">
-            <div class="stat-value">3,392</div>
-            <div class="stat-label">Documents</div>
-        </div>
-        <div class="stat">
-            <div class="stat-value">189.8M</div>
-            <div class="stat-label">Words</div>
-        </div>
-        <div class="stat">
-            <div class="stat-value">704</div>
-            <div class="stat-label">PhD</div>
-        </div>
-        <div class="stat">
-            <div class="stat-value">2,438</div>
-            <div class="stat-label">Master</div>
-        </div>
-    </div>
-
     <main>
-        <div class="two-col">
-            <section>
-                <h2>Thesis Production</h2>
-                <div class="card-grid">
-                    <div class="card">
-                        <a href="thesis_timeline.html">
-                            <div class="card-icon">📊</div>
-                            <div class="card-content">
-                                <div class="card-title">Timeline</div>
-                                <div class="card-description">PhD vs Master (1928-2022)</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="card">
-                        <a href="thesis_timeline_by_institution.html">
-                            <div class="card-icon">🏛️</div>
-                            <div class="card-content">
-                                <div class="card-title">By Institution</div>
-                                <div class="card-description">HEI · IUED · IHEID</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <h2>NER: All Documents</h2>
-                <div class="card-grid">
-                    <div class="card">
-                        <a href="continents_interactive.html">
-                            <div class="card-icon">🌍</div>
-                            <div class="card-content">
-                                <div class="card-title">Continents</div>
-                                <div class="card-description">Geographic focus over time</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="card">
-                        <a href="countries_interactive.html">
-                            <div class="card-icon">🗺️</div>
-                            <div class="card-content">
-                                <div class="card-title">Countries</div>
-                                <div class="card-description">Top 50 countries</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="card">
-                        <a href="ios_interactive.html">
-                            <div class="card-icon">🏢</div>
-                            <div class="card-content">
-                                <div class="card-title">IOs</div>
-                                <div class="card-description">UN, WTO, ILO, etc.</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="card">
-                        <a href="ngos_interactive.html">
-                            <div class="card-icon">🤝</div>
-                            <div class="card-content">
-                                <div class="card-title">NGOs</div>
-                                <div class="card-description">MSF, Amnesty, Oxfam</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="card">
-                        <a href="persons_interactive.html">
-                            <div class="card-icon">👤</div>
-                            <div class="card-content">
-                                <div class="card-title">Persons</div>
-                                <div class="card-description">Historical figures</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </section>
-        </div>
-
         <section>
-            <h2>NER by Thesis Type</h2>
-            <div class="link-grid">
-                <div class="link-card">
-                    <a href="ner_by_subcategory/all_phd/countries.html">🎓 PhD Theses</a>
-                    <span class="count">(704)</span>
-                    <div class="links">
-                        <a href="ner_by_subcategory/all_phd/countries.html">Countries</a> ·
-                        <a href="ner_by_subcategory/all_phd/continents.html">Continents</a> ·
-                        <a href="ner_by_subcategory/all_phd/ios.html">IOs</a> ·
-                        <a href="ner_by_subcategory/all_phd/ngos.html">NGOs</a> ·
-                        <a href="ner_by_subcategory/all_phd/persons.html">Persons</a>
-                    </div>
-                </div>
-                <div class="link-card">
-                    <a href="ner_by_subcategory/all_master/countries.html">📝 Master Theses</a>
-                    <span class="count">(2,317)</span>
-                    <div class="links">
-                        <a href="ner_by_subcategory/all_master/countries.html">Countries</a> ·
-                        <a href="ner_by_subcategory/all_master/continents.html">Continents</a> ·
-                        <a href="ner_by_subcategory/all_master/ios.html">IOs</a> ·
-                        <a href="ner_by_subcategory/all_master/ngos.html">NGOs</a> ·
-                        <a href="ner_by_subcategory/all_master/persons.html">Persons</a>
-                    </div>
-                </div>
+            <h2>Corpus Overview</h2>
+            <div class="quick-links">
+                <a href="thesis_timeline.html">📊 Thesis Timeline <span class="sub">PhD vs Master</span></a>
+                <a href="thesis_timeline_by_institution.html">🏛️ By Institution <span class="sub">HEI · IUED · IHEID</span></a>
             </div>
         </section>
 
         <section>
-            <h2>NER by Institution</h2>
-            <div class="link-grid">
-                <div class="link-card">
-                    <a href="ner_by_subcategory/all_hei/countries.html">🏛️ HEI</a>
-                    <span class="count">(2,815)</span>
-                    <div class="links">
-                        <a href="ner_by_subcategory/all_hei/countries.html">Countries</a> ·
-                        <a href="ner_by_subcategory/all_hei/continents.html">Continents</a> ·
-                        <a href="ner_by_subcategory/all_hei/ios.html">IOs</a> ·
-                        <a href="ner_by_subcategory/all_hei/ngos.html">NGOs</a> ·
-                        <a href="ner_by_subcategory/all_hei/persons.html">Persons</a>
-                    </div>
-                </div>
-                <div class="link-card">
-                    <a href="ner_by_subcategory/all_iued/countries.html">🌐 IUED</a>
-                    <span class="count">(44)</span>
-                    <div class="links">
-                        <a href="ner_by_subcategory/all_iued/countries.html">Countries</a> ·
-                        <a href="ner_by_subcategory/all_iued/continents.html">Continents</a> ·
-                        <a href="ner_by_subcategory/all_iued/ios.html">IOs</a> ·
-                        <a href="ner_by_subcategory/all_iued/ngos.html">NGOs</a> ·
-                        <a href="ner_by_subcategory/all_iued/persons.html">Persons</a>
-                    </div>
-                </div>
-                <div class="link-card">
-                    <a href="ner_by_subcategory/all_iheid/countries.html">🎯 IHEID</a>
-                    <span class="count">(162)</span>
-                    <div class="links">
-                        <a href="ner_by_subcategory/all_iheid/countries.html">Countries</a> ·
-                        <a href="ner_by_subcategory/all_iheid/continents.html">Continents</a> ·
-                        <a href="ner_by_subcategory/all_iheid/ios.html">IOs</a> ·
-                        <a href="ner_by_subcategory/all_iheid/ngos.html">NGOs</a> ·
-                        <a href="ner_by_subcategory/all_iheid/persons.html">Persons</a>
-                    </div>
-                </div>
+            <h2>NER Time Series</h2>
+
+            <div class="legend">
+                <span><span class="dot dot-all"></span> All documents</span>
+                <span><span class="dot dot-type"></span> By thesis type</span>
+                <span><span class="dot dot-inst"></span> By institution</span>
             </div>
+
+            <table class="matrix">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="col-all">All</th>
+                        <th class="col-type sep">PhD</th>
+                        <th class="col-type">Master</th>
+                        <th class="col-inst sep">HEI</th>
+                        <th class="col-inst">IUED</th>
+                        <th class="col-inst">IHEID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="subheader">
+                        <td></td>
+                        <td class="col-all">3,392</td>
+                        <td class="col-type sep">704</td>
+                        <td class="col-type">2,317</td>
+                        <td class="col-inst sep">2,815</td>
+                        <td class="col-inst">44</td>
+                        <td class="col-inst">162</td>
+                    </tr>
+                    <tr>
+                        <td>🌍 Continents</td>
+                        <td class="col-all"><a href="continents_interactive.html">view</a></td>
+                        <td class="col-type sep"><a href="ner_by_subcategory/all_phd/continents.html">view</a></td>
+                        <td class="col-type"><a href="ner_by_subcategory/all_master/continents.html">view</a></td>
+                        <td class="col-inst sep"><a href="ner_by_subcategory/all_hei/continents.html">view</a></td>
+                        <td class="col-inst"><a href="ner_by_subcategory/all_iued/continents.html">view</a></td>
+                        <td class="col-inst"><a href="ner_by_subcategory/all_iheid/continents.html">view</a></td>
+                    </tr>
+                    <tr>
+                        <td>🗺️ Countries</td>
+                        <td class="col-all"><a href="countries_interactive.html">view</a></td>
+                        <td class="col-type sep"><a href="ner_by_subcategory/all_phd/countries.html">view</a></td>
+                        <td class="col-type"><a href="ner_by_subcategory/all_master/countries.html">view</a></td>
+                        <td class="col-inst sep"><a href="ner_by_subcategory/all_hei/countries.html">view</a></td>
+                        <td class="col-inst"><a href="ner_by_subcategory/all_iued/countries.html">view</a></td>
+                        <td class="col-inst"><a href="ner_by_subcategory/all_iheid/countries.html">view</a></td>
+                    </tr>
+                    <tr>
+                        <td>🏢 International Orgs</td>
+                        <td class="col-all"><a href="ios_interactive.html">view</a></td>
+                        <td class="col-type sep"><a href="ner_by_subcategory/all_phd/ios.html">view</a></td>
+                        <td class="col-type"><a href="ner_by_subcategory/all_master/ios.html">view</a></td>
+                        <td class="col-inst sep"><a href="ner_by_subcategory/all_hei/ios.html">view</a></td>
+                        <td class="col-inst"><a href="ner_by_subcategory/all_iued/ios.html">view</a></td>
+                        <td class="col-inst"><a href="ner_by_subcategory/all_iheid/ios.html">view</a></td>
+                    </tr>
+                    <tr>
+                        <td>🤝 NGOs</td>
+                        <td class="col-all"><a href="ngos_interactive.html">view</a></td>
+                        <td class="col-type sep"><a href="ner_by_subcategory/all_phd/ngos.html">view</a></td>
+                        <td class="col-type"><a href="ner_by_subcategory/all_master/ngos.html">view</a></td>
+                        <td class="col-inst sep"><a href="ner_by_subcategory/all_hei/ngos.html">view</a></td>
+                        <td class="col-inst"><a href="ner_by_subcategory/all_iued/ngos.html">view</a></td>
+                        <td class="col-inst"><a href="ner_by_subcategory/all_iheid/ngos.html">view</a></td>
+                    </tr>
+                    <tr>
+                        <td>👤 Persons</td>
+                        <td class="col-all"><a href="persons_interactive.html">view</a></td>
+                        <td class="col-type sep"><a href="ner_by_subcategory/all_phd/persons.html">view</a></td>
+                        <td class="col-type"><a href="ner_by_subcategory/all_master/persons.html">view</a></td>
+                        <td class="col-inst sep"><a href="ner_by_subcategory/all_hei/persons.html">view</a></td>
+                        <td class="col-inst"><a href="ner_by_subcategory/all_iued/persons.html">view</a></td>
+                        <td class="col-inst"><a href="ner_by_subcategory/all_iheid/persons.html">view</a></td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
         <section>
-            <h2>NER by Thesis Type + Institution</h2>
-            <div class="link-grid">
-                <div class="link-card">
-                    <a href="ner_by_subcategory/phd_hei/countries.html">🎓 PhD @ HEI</a>
-                    <span class="count">(527)</span>
-                    <div class="links">
-                        <a href="ner_by_subcategory/phd_hei/countries.html">Countries</a> ·
-                        <a href="ner_by_subcategory/phd_hei/ios.html">IOs</a> ·
-                        <a href="ner_by_subcategory/phd_hei/persons.html">Persons</a>
-                    </div>
-                </div>
-                <div class="link-card">
-                    <a href="ner_by_subcategory/phd_iheid/countries.html">🎓 PhD @ IHEID</a>
-                    <span class="count">(154)</span>
-                    <div class="links">
-                        <a href="ner_by_subcategory/phd_iheid/countries.html">Countries</a> ·
-                        <a href="ner_by_subcategory/phd_iheid/ios.html">IOs</a> ·
-                        <a href="ner_by_subcategory/phd_iheid/persons.html">Persons</a>
-                    </div>
-                </div>
-                <div class="link-card">
-                    <a href="ner_by_subcategory/phd_iued/countries.html">🎓 PhD @ IUED</a>
-                    <span class="count">(23)</span>
-                    <div class="links">
-                        <a href="ner_by_subcategory/phd_iued/countries.html">Countries</a> ·
-                        <a href="ner_by_subcategory/phd_iued/ios.html">IOs</a> ·
-                        <a href="ner_by_subcategory/phd_iued/persons.html">Persons</a>
-                    </div>
-                </div>
-                <div class="link-card">
-                    <a href="ner_by_subcategory/master_hei/countries.html">📝 Master @ HEI</a>
-                    <span class="count">(2,288)</span>
-                    <div class="links">
-                        <a href="ner_by_subcategory/master_hei/countries.html">Countries</a> ·
-                        <a href="ner_by_subcategory/master_hei/ios.html">IOs</a> ·
-                        <a href="ner_by_subcategory/master_hei/persons.html">Persons</a>
-                    </div>
-                </div>
-                <div class="link-card">
-                    <a href="ner_by_subcategory/master_iheid/countries.html">📝 Master @ IHEID</a>
-                    <span class="count">(8)</span>
-                    <div class="links">
-                        <a href="ner_by_subcategory/master_iheid/countries.html">Countries</a> ·
-                        <a href="ner_by_subcategory/master_iheid/ios.html">IOs</a> ·
-                        <a href="ner_by_subcategory/master_iheid/persons.html">Persons</a>
-                    </div>
-                </div>
-                <div class="link-card">
-                    <a href="ner_by_subcategory/master_iued/countries.html">📝 Master @ IUED</a>
-                    <span class="count">(21)</span>
-                    <div class="links">
-                        <a href="ner_by_subcategory/master_iued/countries.html">Countries</a> ·
-                        <a href="ner_by_subcategory/master_iued/ios.html">IOs</a> ·
-                        <a href="ner_by_subcategory/master_iued/persons.html">Persons</a>
-                    </div>
-                </div>
-            </div>
+            <h2>Cross-filtered Views (Thesis Type × Institution)</h2>
+            <table class="matrix">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>PhD @ HEI <span style="font-weight:normal;opacity:0.7">(527)</span></th>
+                        <th>PhD @ IUED <span style="font-weight:normal;opacity:0.7">(23)</span></th>
+                        <th>PhD @ IHEID <span style="font-weight:normal;opacity:0.7">(154)</span></th>
+                        <th class="sep">Master @ HEI <span style="font-weight:normal;opacity:0.7">(2,288)</span></th>
+                        <th>Master @ IUED <span style="font-weight:normal;opacity:0.7">(21)</span></th>
+                        <th>Master @ IHEID <span style="font-weight:normal;opacity:0.7">(8)</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>🗺️ Countries</td>
+                        <td><a href="ner_by_subcategory/phd_hei/countries.html">view</a></td>
+                        <td><a href="ner_by_subcategory/phd_iued/countries.html">view</a></td>
+                        <td><a href="ner_by_subcategory/phd_iheid/countries.html">view</a></td>
+                        <td class="sep"><a href="ner_by_subcategory/master_hei/countries.html">view</a></td>
+                        <td><a href="ner_by_subcategory/master_iued/countries.html">view</a></td>
+                        <td><a href="ner_by_subcategory/master_iheid/countries.html">view</a></td>
+                    </tr>
+                    <tr>
+                        <td>🏢 International Orgs</td>
+                        <td><a href="ner_by_subcategory/phd_hei/ios.html">view</a></td>
+                        <td><a href="ner_by_subcategory/phd_iued/ios.html">view</a></td>
+                        <td><a href="ner_by_subcategory/phd_iheid/ios.html">view</a></td>
+                        <td class="sep"><a href="ner_by_subcategory/master_hei/ios.html">view</a></td>
+                        <td><a href="ner_by_subcategory/master_iued/ios.html">view</a></td>
+                        <td><a href="ner_by_subcategory/master_iheid/ios.html">view</a></td>
+                    </tr>
+                    <tr>
+                        <td>👤 Persons</td>
+                        <td><a href="ner_by_subcategory/phd_hei/persons.html">view</a></td>
+                        <td><a href="ner_by_subcategory/phd_iued/persons.html">view</a></td>
+                        <td><a href="ner_by_subcategory/phd_iheid/persons.html">view</a></td>
+                        <td class="sep"><a href="ner_by_subcategory/master_hei/persons.html">view</a></td>
+                        <td><a href="ner_by_subcategory/master_iued/persons.html">view</a></td>
+                        <td><a href="ner_by_subcategory/master_iheid/persons.html">view</a></td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
         <section>
-            <h2>Methodology</h2>
             <div class="methodology">
-                <ul>
-                    <li><strong>Text Extraction:</strong> ALTO XML to plain text</li>
-                    <li><strong>NER:</strong> spaCy (en_core_web_sm, fr_core_news_sm, de_core_news_sm)</li>
-                    <li><strong>Normalization:</strong> Multilingual entity merging (EN/FR/DE variants)</li>
-                    <li><strong>Visualization:</strong> Plotly with smoothing and per-100k-words normalization</li>
-                </ul>
-                <p style="margin-top: 0.75rem;"><a href="PIPELINE_DOCUMENTATION.md">Full documentation</a></p>
+                <strong>Methodology:</strong> ALTO XML → spaCy NER (EN/FR/DE) → Multilingual normalization → Plotly visualizations with smoothing & per-100k-words normalization.
+                <a href="PIPELINE_DOCUMENTATION.md">Full documentation</a>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>IHEID Thesis Analysis · 1928-2022 · Generated with spaCy NER · Visualized with Plotly</p>
+        IHEID Thesis Analysis · 1928-2022
     </footer>
 </body>
 </html>
