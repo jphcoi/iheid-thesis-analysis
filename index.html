@@ -417,13 +417,149 @@
             <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.75rem;">
                 🔤 <strong>Model:</strong> en/fr/de_core_web_sm (statistical NER) · <strong>Scope:</strong> full documents
             </p>
-            <div class="quick-links">
-                <a href="spacy/continents_interactive.html" style="background:#fff3e0;border-color:#ff9800;">🌍 Continents</a>
-                <a href="spacy/countries_interactive.html" style="background:#fff3e0;border-color:#ff9800;">🗺️ Countries</a>
-                <a href="spacy/ios_interactive.html" style="background:#fff3e0;border-color:#ff9800;">🏢 Int'l Orgs</a>
-                <a href="spacy/ngos_interactive.html" style="background:#fff3e0;border-color:#ff9800;">🤝 NGOs</a>
-                <a href="spacy/persons_interactive.html" style="background:#fff3e0;border-color:#ff9800;">👤 Persons</a>
+
+            <div class="legend">
+                <span><span class="dot dot-all"></span> All documents</span>
+                <span><span class="dot dot-type"></span> By thesis type</span>
+                <span><span class="dot dot-inst"></span> By institution</span>
             </div>
+
+            <table class="matrix">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="col-all">All</th>
+                        <th class="col-type sep">PhD</th>
+                        <th class="col-type">Master</th>
+                        <th class="col-inst sep">HEI</th>
+                        <th class="col-inst">IUED</th>
+                        <th class="col-inst">IHEID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="subheader">
+                        <td></td>
+                        <td class="col-all">4,205</td>
+                        <td class="col-type sep">1,732</td>
+                        <td class="col-type">2,473</td>
+                        <td class="col-inst sep">2,850</td>
+                        <td class="col-inst">380</td>
+                        <td class="col-inst">975</td>
+                    </tr>
+                    <tr>
+                        <td>🌍 Continents</td>
+                        <td class="col-all"><a href="spacy/continents_interactive.html">view</a></td>
+                        <td class="col-type sep"><a href="spacy/ner_by_subcategory/all_phd/continents.html">view</a></td>
+                        <td class="col-type"><a href="spacy/ner_by_subcategory/all_master/continents.html">view</a></td>
+                        <td class="col-inst sep"><a href="spacy/ner_by_subcategory/all_hei/continents.html">view</a></td>
+                        <td class="col-inst"><a href="spacy/ner_by_subcategory/all_iued/continents.html">view</a></td>
+                        <td class="col-inst"><a href="spacy/ner_by_subcategory/all_iheid/continents.html">view</a></td>
+                    </tr>
+                    <tr>
+                        <td>🗺️ Countries</td>
+                        <td class="col-all"><a href="spacy/countries_interactive.html">view</a></td>
+                        <td class="col-type sep"><a href="spacy/ner_by_subcategory/all_phd/countries.html">view</a></td>
+                        <td class="col-type"><a href="spacy/ner_by_subcategory/all_master/countries.html">view</a></td>
+                        <td class="col-inst sep"><a href="spacy/ner_by_subcategory/all_hei/countries.html">view</a></td>
+                        <td class="col-inst"><a href="spacy/ner_by_subcategory/all_iued/countries.html">view</a></td>
+                        <td class="col-inst"><a href="spacy/ner_by_subcategory/all_iheid/countries.html">view</a></td>
+                    </tr>
+                    <tr>
+                        <td>🏢 International Orgs</td>
+                        <td class="col-all"><a href="spacy/ios_interactive.html">view</a></td>
+                        <td class="col-type sep"><a href="spacy/ner_by_subcategory/all_phd/ios.html">view</a></td>
+                        <td class="col-type"><a href="spacy/ner_by_subcategory/all_master/ios.html">view</a></td>
+                        <td class="col-inst sep"><a href="spacy/ner_by_subcategory/all_hei/ios.html">view</a></td>
+                        <td class="col-inst"><a href="spacy/ner_by_subcategory/all_iued/ios.html">view</a></td>
+                        <td class="col-inst"><a href="spacy/ner_by_subcategory/all_iheid/ios.html">view</a></td>
+                    </tr>
+                    <tr>
+                        <td>🤝 NGOs</td>
+                        <td class="col-all"><a href="spacy/ngos_interactive.html">view</a></td>
+                        <td class="col-type sep"><a href="spacy/ner_by_subcategory/all_phd/ngos.html">view</a></td>
+                        <td class="col-type"><a href="spacy/ner_by_subcategory/all_master/ngos.html">view</a></td>
+                        <td class="col-inst sep"><a href="spacy/ner_by_subcategory/all_hei/ngos.html">view</a></td>
+                        <td class="col-inst"><a href="spacy/ner_by_subcategory/all_iued/ngos.html">view</a></td>
+                        <td class="col-inst"><a href="spacy/ner_by_subcategory/all_iheid/ngos.html">view</a></td>
+                    </tr>
+                    <tr>
+                        <td>👤 Persons</td>
+                        <td class="col-all"><a href="spacy/persons_interactive.html">view</a></td>
+                        <td class="col-type sep"><a href="spacy/ner_by_subcategory/all_phd/persons.html">view</a></td>
+                        <td class="col-type"><a href="spacy/ner_by_subcategory/all_master/persons.html">view</a></td>
+                        <td class="col-inst sep"><a href="spacy/ner_by_subcategory/all_hei/persons.html">view</a></td>
+                        <td class="col-inst"><a href="spacy/ner_by_subcategory/all_iued/persons.html">view</a></td>
+                        <td class="col-inst"><a href="spacy/ner_by_subcategory/all_iheid/persons.html">view</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2 style="display:flex;align-items:center;gap:0.5rem;">
+                <span style="background:#ff9800;color:white;padding:0.2rem 0.5rem;border-radius:4px;font-size:0.75rem;">spaCy</span>
+                Cross-filtered Views (Thesis Type × Institution)
+            </h2>
+            <table class="matrix">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>PhD @ HEI <span style="font-weight:normal;opacity:0.7">(742)</span></th>
+                        <th>PhD @ IUED <span style="font-weight:normal;opacity:0.7">(23)</span></th>
+                        <th>PhD @ IHEID <span style="font-weight:normal;opacity:0.7">(967)</span></th>
+                        <th class="sep">Master @ HEI <span style="font-weight:normal;opacity:0.7">(2,108)</span></th>
+                        <th>Master @ IUED <span style="font-weight:normal;opacity:0.7">(357)</span></th>
+                        <th>Master @ IHEID <span style="font-weight:normal;opacity:0.7">(8)</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>🌍 Continents</td>
+                        <td><a href="spacy/ner_by_subcategory/phd_hei/continents.html">view</a></td>
+                        <td><a href="spacy/ner_by_subcategory/phd_iued/continents.html">view</a></td>
+                        <td><a href="spacy/ner_by_subcategory/phd_iheid/continents.html">view</a></td>
+                        <td class="sep"><a href="spacy/ner_by_subcategory/master_hei/continents.html">view</a></td>
+                        <td><a href="spacy/ner_by_subcategory/master_iued/continents.html">view</a></td>
+                        <td><a href="spacy/ner_by_subcategory/master_iheid/continents.html">view</a></td>
+                    </tr>
+                    <tr>
+                        <td>🗺️ Countries</td>
+                        <td><a href="spacy/ner_by_subcategory/phd_hei/countries.html">view</a></td>
+                        <td><a href="spacy/ner_by_subcategory/phd_iued/countries.html">view</a></td>
+                        <td><a href="spacy/ner_by_subcategory/phd_iheid/countries.html">view</a></td>
+                        <td class="sep"><a href="spacy/ner_by_subcategory/master_hei/countries.html">view</a></td>
+                        <td><a href="spacy/ner_by_subcategory/master_iued/countries.html">view</a></td>
+                        <td><a href="spacy/ner_by_subcategory/master_iheid/countries.html">view</a></td>
+                    </tr>
+                    <tr>
+                        <td>🏢 International Orgs</td>
+                        <td><a href="spacy/ner_by_subcategory/phd_hei/ios.html">view</a></td>
+                        <td><a href="spacy/ner_by_subcategory/phd_iued/ios.html">view</a></td>
+                        <td><a href="spacy/ner_by_subcategory/phd_iheid/ios.html">view</a></td>
+                        <td class="sep"><a href="spacy/ner_by_subcategory/master_hei/ios.html">view</a></td>
+                        <td><a href="spacy/ner_by_subcategory/master_iued/ios.html">view</a></td>
+                        <td><a href="spacy/ner_by_subcategory/master_iheid/ios.html">view</a></td>
+                    </tr>
+                    <tr>
+                        <td>🤝 NGOs</td>
+                        <td><a href="spacy/ner_by_subcategory/phd_hei/ngos.html">view</a></td>
+                        <td><a href="spacy/ner_by_subcategory/phd_iued/ngos.html">view</a></td>
+                        <td><a href="spacy/ner_by_subcategory/phd_iheid/ngos.html">view</a></td>
+                        <td class="sep"><a href="spacy/ner_by_subcategory/master_hei/ngos.html">view</a></td>
+                        <td><a href="spacy/ner_by_subcategory/master_iued/ngos.html">view</a></td>
+                        <td><a href="spacy/ner_by_subcategory/master_iheid/ngos.html">view</a></td>
+                    </tr>
+                    <tr>
+                        <td>👤 Persons</td>
+                        <td><a href="spacy/ner_by_subcategory/phd_hei/persons.html">view</a></td>
+                        <td><a href="spacy/ner_by_subcategory/phd_iued/persons.html">view</a></td>
+                        <td><a href="spacy/ner_by_subcategory/phd_iheid/persons.html">view</a></td>
+                        <td class="sep"><a href="spacy/ner_by_subcategory/master_hei/persons.html">view</a></td>
+                        <td><a href="spacy/ner_by_subcategory/master_iued/persons.html">view</a></td>
+                        <td><a href="spacy/ner_by_subcategory/master_iheid/persons.html">view</a></td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
         <section>
