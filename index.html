@@ -256,19 +256,13 @@
         </section>
 
         <section>
-            <h2>NER Method</h2>
-            <div class="quick-links">
-                <a href="gliner/" style="background:#e8f5e9;border-color:#4caf50;">🤖 GLiNER <span class="sub">Transformer zero-shot</span></a>
-                <a href="spacy/" style="background:#fff3e0;border-color:#ff9800;">🔤 spaCy <span class="sub">Statistical NER</span></a>
-            </div>
-            <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:1rem;">
-                <strong>GLiNER:</strong> urchade/gliner_multi-v2.1 (pages 30-40) ·
-                <strong>spaCy:</strong> en/fr/de_core_web_sm (full documents)
+            <h2 style="display:flex;align-items:center;gap:0.5rem;">
+                <span style="background:#4caf50;color:white;padding:0.2rem 0.5rem;border-radius:4px;font-size:0.75rem;">GLiNER</span>
+                NER Time Series
+            </h2>
+            <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.75rem;">
+                🤖 <strong>Model:</strong> urchade/gliner_multi-v2.1 (transformer, zero-shot) · <strong>Scope:</strong> pages 30-40 of each thesis
             </p>
-        </section>
-
-        <section>
-            <h2>NER Time Series (GLiNER)</h2>
 
             <div class="legend">
                 <span><span class="dot dot-all"></span> All documents</span>
@@ -348,7 +342,10 @@
         </section>
 
         <section>
-            <h2>Cross-filtered Views (Thesis Type × Institution)</h2>
+            <h2 style="display:flex;align-items:center;gap:0.5rem;">
+                <span style="background:#4caf50;color:white;padding:0.2rem 0.5rem;border-radius:4px;font-size:0.75rem;">GLiNER</span>
+                Cross-filtered Views (Thesis Type × Institution)
+            </h2>
             <table class="matrix">
                 <thead>
                     <tr>
@@ -410,6 +407,23 @@
                 </tbody>
             </table>
             <p style="font-size:0.75rem;color:var(--text-muted);margin-top:0.5rem;">* IUED Master theses (357 total) have no date metadata available for time series</p>
+        </section>
+
+        <section>
+            <h2 style="display:flex;align-items:center;gap:0.5rem;">
+                <span style="background:#ff9800;color:white;padding:0.2rem 0.5rem;border-radius:4px;font-size:0.75rem;">spaCy</span>
+                NER Time Series
+            </h2>
+            <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.75rem;">
+                🔤 <strong>Model:</strong> en/fr/de_core_web_sm (statistical NER) · <strong>Scope:</strong> full documents
+            </p>
+            <div class="quick-links">
+                <a href="spacy/continents_interactive.html" style="background:#fff3e0;border-color:#ff9800;">🌍 Continents</a>
+                <a href="spacy/countries_interactive.html" style="background:#fff3e0;border-color:#ff9800;">🗺️ Countries</a>
+                <a href="spacy/ios_interactive.html" style="background:#fff3e0;border-color:#ff9800;">🏢 Int'l Orgs</a>
+                <a href="spacy/ngos_interactive.html" style="background:#fff3e0;border-color:#ff9800;">🤝 NGOs</a>
+                <a href="spacy/persons_interactive.html" style="background:#fff3e0;border-color:#ff9800;">👤 Persons</a>
+            </div>
         </section>
 
         <section>
